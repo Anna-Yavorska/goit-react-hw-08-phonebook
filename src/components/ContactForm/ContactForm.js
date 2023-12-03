@@ -7,7 +7,7 @@ import { findDuplicates } from 'helpers/findDuplicates';
 
 const phonePattern = /^\d{3}-\d{2}-\d{2}$/;
 const quizSchema = Yup.object().shape({
-  name: Yup.string().min(3, 'Too Short!').required('Required'),
+  name: Yup.string().min(3, 'Too Short!').trim().required('Required'),
   number: Yup.string()
     .matches(phonePattern, 'Enter the phone number in the format 222-22-22')
     .required('Required'),
