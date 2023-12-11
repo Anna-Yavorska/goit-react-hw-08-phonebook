@@ -2,11 +2,11 @@ import toast from 'react-hot-toast';
 
 export const findDuplicates = (contacts, newContact) => {
   const isDuplicateName = contacts.some(
-    contact => contact.name.toLowerCase() === newContact.name.toLowerCase()
+    contact => contact.text.name.toLowerCase() === newContact.name.toLowerCase()
   );
 
   const isDuplicateNumber = contacts.some(
-    contact => contact.number === newContact.number
+    contact => contact.text.number === newContact.number
   );
 
   if (isDuplicateName) {
