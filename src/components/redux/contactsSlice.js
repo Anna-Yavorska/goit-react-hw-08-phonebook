@@ -7,10 +7,12 @@ const initialState = {
     items: [],
     isLoading: false,
     error: null,
-  }
+  },
 };
 
-const handlePending = state => state.contacts.isLoading = true;
+const handlePending = state => {
+  state.contacts.isLoading = true;
+};
 const handleRejected = (state, action) => {
   state.contacts.isLoading = false;
   state.contacts.error = action.payload;
@@ -20,8 +22,7 @@ const contactsSlice = createSlice({
   initialState: initialState,
   extraReducers: builder =>
     builder
-      .addCase(
-        fetchContacts.pending, handlePending)
+      .addCase(fetchContacts.pending, handlePending)
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.contacts.isLoading = false;
         state.contacts.error = null;
