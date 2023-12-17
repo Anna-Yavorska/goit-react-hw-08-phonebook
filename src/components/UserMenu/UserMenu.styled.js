@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
-display: flex;
-gap: 8px;
+export const UserInfo = styled.div`
+  display: flex;
+  gap: 20px;
+  font-weight: 500;
 `;
 
-export const Button = styled(NavLink)`
+export const Button = styled.button`
   padding: 2px 4px;
   background-color: blue;
   color: white;

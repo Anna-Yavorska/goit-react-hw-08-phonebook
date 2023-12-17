@@ -12,6 +12,10 @@ export const Form = styled(FormWrapper)`
   border: 2px solid blue;
   max-width: 320px;
   padding: 12px;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
   background-color: cornsilk;
 `;
 
@@ -27,13 +31,18 @@ export const ErrorMessage = styled(Error)`
 `;
 
 export const Button = styled.button`
-  padding: 2px 4px;
+  max-width: 40%;
   background-color: blue;
   color: white;
-  border: 2px solid black;
+  padding: 2px 4px;
   border-radius: 4px;
-  text-decoration: none;
-  max-width: 50%;
+  cursor: pointer;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 8px;
+  font-size: 18px;
+
+  &:hover {
+    background-color: orange;
+  }
 `;

@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import { Toaster } from "react-hot-toast";
 import { Outlet } from "react-router-dom";
 import { AppBar } from "./AppBar/AppBar";
+import { GlobalStyle } from "./GlobalStyle";
 
 export const Layout = () => {
   return (
@@ -9,7 +10,8 @@ export const Layout = () => {
           <AppBar />
           <Suspense fallback={null}>
               <Outlet/>
-          </Suspense>
+      </Suspense>
+      <GlobalStyle />
           <Toaster position="bottom-right" reverseOrder={false} />
     </div>
   );

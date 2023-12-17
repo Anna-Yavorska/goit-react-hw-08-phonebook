@@ -26,8 +26,7 @@ export const ContactList = () => {
       {error && toast.error('Something went wrong! Try to reload this page')}
       <ul>
         {filteredContacts.map(contact => {
-          const { id, text } = contact;
-          const { name, number } = text;
+          const { id, name, number } = contact;
 
           return (
             <Item key={id}>

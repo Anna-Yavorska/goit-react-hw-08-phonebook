@@ -1,11 +1,16 @@
-import { ErrorMessage, Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { Form } from 'react-router-dom';
 import { register } from 'redux/auth/operations';
 import * as Yup from 'yup';
+import {
+  ErrorMessage,
+  Field,
+  Form,
+  Button,
+} from './RegisterForm.styled';
 
 const quizSchema = Yup.object().shape({
-  username: Yup.string().min(3, 'Too Short!').trim().required('Required'),
+  name: Yup.string().min(3, 'Too Short!').trim().required('Required'),
   email: Yup.string().min(3, 'Too Short!').trim().required('Required'),
   password: Yup.string().min(3, 'Too Short!').trim().required('Required'),
 });
@@ -15,7 +20,7 @@ export const RegisterForm = () => {
   return (
     <Formik
       initialValues={{
-        username: '',
+        name: '',
         email: '',
         password: '',
       }}
@@ -23,19 +28,18 @@ export const RegisterForm = () => {
       onSubmit={(values, actions) => {
         dispatch(
           register({
-            name: values.username,
+            name: values.name,
             email: values.email,
-            password: values.pa,
+            password: values.password,
           })
         );
         actions.resetForm();
       }}
-      
     >
       <Form>
-        <label htmlFor="username">Username</label>
-        <Field id="username" name="Username" />
-        <ErrorMessage name="username" component="span" />
+        <label htmlFor="name">Username</label>
+        <Field id="name" name="name" />
+        <ErrorMessage name="name" component="span" />
 
         <label htmlFor="email">Email</label>
         <Field id="email" name="email" />
@@ -45,7 +49,7 @@ export const RegisterForm = () => {
         <Field id="password" name="password" />
         <ErrorMessage name="password" component="span" />
 
-        <button type="submit">Register</button>
+        <Button type="submit">Register</Button>
       </Form>
     </Formik>
   );

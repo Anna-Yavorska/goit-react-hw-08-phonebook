@@ -7,3 +7,8 @@ export const FilterWrapper = styled.div`
   font-size: 18px;
   font-weight: 500;
 `;
+
+export const FilterInput = styled.input`
+  font-size: 18px;
+  padding: 2px 4px;
+`;
