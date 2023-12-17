@@ -1,12 +1,12 @@
 import { Formik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { register } from 'redux/auth/operations';
+import { logIn } from 'redux/auth/operations';
 import * as Yup from 'yup';
 import { Button, ErrorMessage, Field, Form } from './LoginForm.styled';
 
 const quizSchema = Yup.object().shape({
   email: Yup.string().min(3, 'Too Short!').trim().required('Required'),
-  password: Yup.string().min(3, 'Too Short!').trim().required('Required'),
+  password: Yup.string().min(8, 'Too Short!').trim().required('Required'),
 });
 
 export const LoginForm = () => {
@@ -20,7 +20,7 @@ export const LoginForm = () => {
       validationSchema={quizSchema}
       onSubmit={(values, actions) => {
         dispatch(
-          register({
+          logIn({
             email: values.email,
             password: values.password,
           })
@@ -36,7 +36,7 @@ export const LoginForm = () => {
         <ErrorMessage name="email" component="span" />
 
         <label htmlFor="password">Password</label>
-        <Field id="password" name="password" />
+        <Field id="password" name="password" type="password" />
         <ErrorMessage name="password" component="span" />
 
         <Button type="submit">Log in</Button>

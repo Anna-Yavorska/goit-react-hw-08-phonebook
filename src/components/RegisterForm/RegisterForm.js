@@ -12,7 +12,7 @@ import {
 const quizSchema = Yup.object().shape({
   name: Yup.string().min(3, 'Too Short!').trim().required('Required'),
   email: Yup.string().min(3, 'Too Short!').trim().required('Required'),
-  password: Yup.string().min(3, 'Too Short!').trim().required('Required'),
+  password: Yup.string().min(8, 'Too Short!').trim().required('Required'),
 });
 
 export const RegisterForm = () => {
@@ -46,7 +46,7 @@ export const RegisterForm = () => {
         <ErrorMessage name="email" component="span" />
 
         <label htmlFor="password">Password</label>
-        <Field id="password" name="password" />
+        <Field id="password" name="password" type="password" />
         <ErrorMessage name="password" component="span" />
 
         <Button type="submit">Register</Button>
