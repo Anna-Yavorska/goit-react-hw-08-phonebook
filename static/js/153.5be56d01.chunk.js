@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[153],{6153:function(e,n,t){t.r(n),t.d(n,{default:function(){return s}});var o,r,c=t(168),a=t(5867),l=a.ZP.div(o||(o=(0,c.Z)(["\ndisplay: flex;\njustify-content: center;\nalign-items: center;\nbackground-color: blue;\n"]))),i=a.ZP.h1(r||(r=(0,c.Z)(["\nfont-size: 46px;\nfont-weight: 700;\ncolor: orange;\n"]))),u=t(184);function s(){return(0,u.jsx)(l,{children:(0,u.jsx)(i,{children:"Phonebook manager welcome page"})})}}}]);
-//# sourceMappingURL=153.5be56d01.chunk.js.map
