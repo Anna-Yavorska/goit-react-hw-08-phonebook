@@ -5,9 +5,9 @@ import {
   selectError,
   selectIsLoading,
   selectfilteredContacts,
-} from 'components/redux/selectors';
+} from 'redux/contacts/selectors';
 import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'helpers/operations';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
 import toast from 'react-hot-toast';
 
 export const ContactList = () => {

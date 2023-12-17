@@ -3,8 +3,8 @@ import { Form, Field, ErrorMessage, Button } from './ContactForm.styled';
 import * as Yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { findDuplicates } from 'helpers/findDuplicates';
-import { selectContacts } from 'components/redux/selectors';
-import { addContact } from 'helpers/operations';
+import { selectContacts } from 'redux/contacts/selectors';
+import { addContact } from 'redux/contacts/operations';
 
 const phonePattern = /^\d{3}-\d{2}-\d{2}$/;
 const quizSchema = Yup.object().shape({
@@ -31,7 +31,6 @@ export const ContactForm = () => {
         }
         actions.resetForm();
       }}
-      s
     >
       <Form>
         <label htmlFor="name">Name</label>
